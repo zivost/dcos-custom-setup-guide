@@ -107,7 +107,7 @@ sudo docker run -d -p 9000:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro ngi
 `loop the below process for each master node{`
 ```bash
 cd /tmp/dcos
-curl -O http://<master-ip>:9000/dcos_install.sh
+curl -O http://<bootstrap-public-ip>:9000/dcos_install.sh
 sudo bash dcos_install.sh master
 ```
 `}end of loop`
@@ -117,7 +117,7 @@ sudo bash dcos_install.sh master
 `loop the below process for each private agent node{`
 ```bash
 cd /tmp/dcos
-curl -O http://<agent-ip>:9000/dcos_install.sh
+curl -O http://<bootstrap-public-ip>:9000/dcos_install.sh
 sudo bash dcos_install.sh slave
 ```
 `}end of loop`
@@ -127,7 +127,7 @@ sudo bash dcos_install.sh slave
 `loop the below process for each public agent node{`
 ```bash
 cd /tmp/dcos
-curl -O http://<public-agent-ip>:9000/dcos_install.sh
+curl -O http://<bootstrap-public-ip>:9000/dcos_install.sh
 sudo bash dcos_install.sh slave_public
 ```
 `}end of loop`
