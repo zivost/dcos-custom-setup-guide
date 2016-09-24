@@ -9,6 +9,7 @@ Minimum Server Requirements [details on dcos.io](https://dcos.io/docs/1.8/admini
 ## 1. Install Prerequisites on all nodes
 - Recommended OS: CentOS 7.2
 - username should be same on all nodes
+
 ### Part 1.1
 ```bash
 sudo yum upgrade --assumeyes --tolerant
