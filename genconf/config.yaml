@@ -5,7 +5,7 @@ agent_list:
 - <agent-private-ip-1>
 - <agent-private-ip-2>
 - <agent-private-ip-3>
-bootstrap_url: http://<agent-public-ip>
+bootstrap_url: http://<agent-public-ip>:9000
 cluster_name: <cluster-name>
 master_discovery: static
 master_list:
