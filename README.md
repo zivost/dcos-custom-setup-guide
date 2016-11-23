@@ -50,7 +50,18 @@ sudo groupadd nogroup
 sudo yum install -y ipset unzip wget git curl xz
 sudo setenforce 0
 mkdir /tmp/dcos
-sudo kill `sudo lsof -t -i:53`
+sudo systemctl disable dnsmasq
+sudo systemctl stop dnsmasq
+```
+```bash
+sudo yum -y install ntp
+timedatectl set-ntp true
+```
+```bash
+sudo vi /etc/hosts
+## Add hosts data here in below format (all nodes)
+## private-ip1	xyz1.mysite.com xyz1 XYZ1
+## private-ip2	xyz2.mysite.com xyz1 XYZ1
 ```
 ```bash
 sudo vi /etc/sysconfig/selinux
