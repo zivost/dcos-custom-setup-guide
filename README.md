@@ -56,6 +56,10 @@ sudo systemctl stop dnsmasq
 ```bash
 sudo yum -y install ntp
 timedatectl set-ntp true
+sudo service ntpd stop
+sudo ntpdate 0.centos.pool.ntp.org
+sudo service ntpd start
+sudo systemctl enable ntpd
 ```
 ```bash
 sudo vi /etc/hosts
