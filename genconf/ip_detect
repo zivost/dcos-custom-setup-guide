@@ -1,4 +1,3 @@
-# genconf/ip-detect
 #!/usr/bin/env bash
 set -o nounset -o errexit
 export PATH=/usr/sbin:/usr/bin:$PATH
