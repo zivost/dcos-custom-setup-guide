@@ -1,21 +1,28 @@
-# genconf/config.yaml
-# Use this bootstrap_url value unless you have moved the DC/OS installer assets.
 ---
 agent_list:
-- <agent-private-ip-1>
-- <agent-private-ip-2>
-- <agent-private-ip-3>
-bootstrap_url: http://<agent-public-ip>:9000
-cluster_name: <cluster-name>
+- 10.5.0.4
+public_agent_list:
+- 10.4.0.4
+- 10.3.0.4
+oauth_enabled: 'true'
+oauth_issuer_url: https://mydomain.auth0.com/
+oauth_client_id: client_id
+oauth_auth_redirector: https://mydomain.auth0.com
+oauth_auth_host: https://mydomain.auth0.com
+exhibitor_storage_backend: static
+telemetry_enabled: 'true'
+bootstrap_url: file:///opt/dcos_install_tmp
+cluster_name: trumpt-dcos
+log_directory: /genconf/logs
 master_discovery: static
 master_list:
-- <master-private-ip-1>
-- <master-private-ip-2>
-- <master-private-ip-3>
-public_agent_list:
-- <public-agent-private-ip>
+- 10.2.0.4
+- 10.2.0.5
+- 10.5.0.5
+process_timeout: 10000
 resolvers:
-- 8.8.4.4
 - 8.8.8.8
-ssh_port: 22
-ssh_user: <username>
+- 8.8.4.4
+ssh_key_path: /genconf/ssh-key
+ssh_port: '22'
+ssh_user: sysop
